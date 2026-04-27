@@ -8,6 +8,11 @@ import { TestComponent } from './shared/components/test/test.component';
 import { FormsModule } from '@angular/forms';
 import { TodosComponent } from './shared/components/todos/todos.component';
 import { TodosSComponent } from './shared/components/todos-s/todos-s.component';
+import { StudentOneComponent } from './shared/components/student-one/student-one.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { TodosSComponent } from './shared/components/todos-s/todos-s.component';
     ProductsComponent,
     TestComponent,
     TodosComponent,
-    TodosSComponent
+    TodosSComponent,
+    StudentOneComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
