@@ -1,0 +1,77 @@
+
+<p>
+    This is product {{PRODUCT_NAME}} and its Id is {{PRODUCT_ID}}.  
+</p>
+
+<br>
+
+<!-- <h3>Search Product</h3> -->
+<!-- <div class="form-group">
+    <input #productName
+     type="text" class="Form-control">
+</div> -->
+<!-- <button (click)="onSearch(productName)"  class = "btn btn-primary"
+class="btn btn-primary">
+  Search Product
+</button> -->
+
+
+<!-- <button (click)="onSearch()" class = "btn btn-primary"
+class="btn btn-primary">
+  Search Product
+</button> -->
+
+
+
+
+
+<!-- <h3>Search Product</h3>
+<div class="form-group">
+    <input 
+    (keyup)="onSearch($event)"
+     type="text" class="Form-control">
+</div> -->
+
+<div [innerHTML]="testHTML">
+  <!-- {{testHTML}} -->
+</div>
+
+<img [src]="imgSrc" alt="Angular">
+
+<div class="form-group mt-4">
+    <input [value]="userName"
+     type="text" class="Form-control">
+</div>
+
+
+<!-- ==== Two way data binding ===== -->
+
+<!-- <h3>Search Product(two way data binding)</h3>
+
+<div class="form-group">
+    <input
+    [(ngModel)] = "searchProduct"
+    #productName
+     type="text" class="Form-control">
+</div>
+<p  *ngIf="searchProduct"
+class="alert alert-info">
+{{searchProduct}}
+</p> -->
+
+
+<!-- === Custome Create Two way data biding ====-->
+
+<h3>Search Product(Custome create)</h3>
+<div class="form-group">
+    <input
+    (input)="onSearch($event)"
+    #productName
+     type="text" class="Form-control">
+</div>
+<p  *ngIf="searchProduct"
+class="alert alert-info">
+{{searchProduct}}
+</p>
+
+

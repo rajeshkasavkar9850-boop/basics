@@ -1,0 +1,38 @@
+
+
+
+<div class="row mt-5">
+    <div class="col-md-6 mb-4 mb-md-0">
+       <div class="form-group">
+        <input type="text" #todoControl class="form-control">
+       </div>
+       <button *ngIf="!isIneditMode"
+       (click)="onTodoAdd()"
+       class="btn btn-sm btn-block btn-primary">Add Todo</button>
+
+        <button (click)="onTodoUpdate()"
+        *ngIf="isIneditMode"
+       class="btn btn-sm btn-block btn-primary">Update Todo</button>
+    </div>
+
+    <div class="col-md-6">
+        <ul class="list-group" *ngIf="todosArr.length > 0;else noTodos">
+            <li *ngFor="let todo of todosArr; trackBy : trackByFun"
+            class="list-group-item d-flex justify-content-between">
+                <strong>{{todo.todoItem}}</strong>
+                <div>
+                    <button (click)="onEdit(todo)"
+                     class=" mr-2 btn btn-sm btn-outline-primary">Edit</button>
+                    <button (click)="onRemove(todo.todoId)"
+                    class="btn btn-sm btn-outline-danger">Remove</button>
+                </div>
+            </li>
+        </ul>
+        <ng-template #noTodos>
+            <p class="alert alert-info">
+                No todo Item added yet !!!
+            </p>
+        </ng-template>
+    </div>
+</div>
+
