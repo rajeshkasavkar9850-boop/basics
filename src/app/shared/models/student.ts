@@ -7,4 +7,5 @@ export interface Istudent{
     email: string;
     contact: string;
     stdId : string;
+    isActive : boolean;
 }

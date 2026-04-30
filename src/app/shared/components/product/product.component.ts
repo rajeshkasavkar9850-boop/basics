@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 
 @Component({
@@ -6,10 +6,13 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
     templateUrl : './product.component.html',
     styleUrls : ['./product.component.scss']
 })
-export class ProductComponent{
+export class ProductComponent implements OnInit{
+    ngOnInit(): void {
+        this.isAvailable = Math.random() >= .5? true : false
+    }
  PRODUCT_NAME : string = 'Samsung M32';
  PRODUCT_ID : string = '1234';
-
+ isAvailable !: boolean | undefined
  testHTML : string = `<p>This is test component!!!123</p>`;
 
  userName :string = 'I am Raj';
@@ -43,10 +46,10 @@ export class ProductComponent{
 // =============  Custome Create Two way data biding =====//
 
 
-onSearch(eve:Event){
-let val =( eve.target as HTMLInputElement).value;
-this.searchProduct = val
-}
+// onSearch(eve:Event){
+// let val =( eve.target as HTMLInputElement).value;
+// this.searchProduct = val
+// }
 
 
 

@@ -1,0 +1,30 @@
+
+
+
+<ul class="nav nav-pills mt-5">
+    <li *ngFor="let tab of tabsArr"
+    class="nav-item">
+        <a href="javascript:;"
+         [ngClass]="{
+            active :selectedSkill.toLowerCase().includes(tab.frameWorkName)
+         }"
+        class="nav-link"
+        (click)="onTabChange(tab.frameWorkName)">
+            {{tab.tabTitle}}
+        </a>
+    </li>
+</ul>
+
+<hr>
+
+<div class="card">
+    <ng-container *ngFor="let tab of tabsArr">
+        <div class="card-body"
+        [innerHTML]="tab.tabContent"
+        *ngIf="selectedSkill.toLowerCase().includes(tab.frameWorkName)">
+           
+        </div>
+    </ng-container>
+</div>
+
+

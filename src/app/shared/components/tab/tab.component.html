@@ -1,0 +1,70 @@
+
+
+<h3 class=" mt-5 mb-3 text-center d-inline-block bg-primary text-white">Skill Tabs Navigation</h3>
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active :selectedSkill.toLocaleLowerCase().includes('html')
+        }"
+        class="nav-link"
+        (click)="onTabChange('html')"
+        >HTML</a></li>
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active :selectedSkill.toLocaleLowerCase().includes('css')
+        }"
+        class="nav-link"
+        (click)="onTabChange('css')"
+        >CSS</a></li>
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active :selectedSkill.toLocaleLowerCase().includes('javascript')
+        }"
+        class="nav-link"
+        (click)="selectedSkill = 'javascript'"
+        >Javascript</a></li>
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active :selectedSkill.toLocaleLowerCase().includes('angular')
+        }"
+        class="nav-link"
+        (click)="selectedSkill = 'angular'"
+        >Angular</a></li>
+</ul>
+
+
+<div class="tab-content">
+    <div class="card" *ngIf="selectedSkill.toLocaleLowerCase().includes('html')">
+        <div class="card-body">
+            <strong>HTML</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sequi,
+             autem ipsam quasi nobis eligendi nihil deserunt sit beatae, 
+             illo praesentium molestias quam optio esse, voluptas obcaecati. Saepe, sequi eligendi!
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLocaleLowerCase().includes('css')">
+        <div class="card-body">
+            <strong>CSS</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Ab sequi, autem ipsam quasi nobis eligendi nihil deserunt sit beatae, 
+            illo praesentium molestias quam optio esse, voluptas obcaecati. Saepe, sequi eligendi!
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLocaleLowerCase().includes('javascript')">
+        <div class="card-body">
+            <strong>Javascript</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+             Ab sequi, autem ipsam quasi nobis eligendi nihil deserunt sit beatae, 
+             illo praesentium molestias quam optio esse, voluptas obcaecati. Saepe, sequi eligendi!
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLocaleLowerCase().includes('angular')">
+        <div class="card-body">
+            <strong>Angular</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+             Ab sequi, autem ipsam quasi nobis eligendi nihil deserunt sit beatae, 
+             illo praesentium molestias quam optio esse, voluptas obcaecati. Saepe, sequi eligendi!
+        </div>
+    </div>
+</div>

@@ -20,16 +20,27 @@
             <label for="contact">Contact</label>
             <input type="text" #contact class="form-control">
         </div>
+
+          <div class="form-group">
+            <label for="isActive">Is Active</label>
+            <select type="text" #isActive class="form-control">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+
         <button (click) = "onStdAdd()"
         *ngIf="!isInEditMode"
         mat-raised-button color="primary" class="btn-block">Add Student</button>
-        <button *ngIf="isInEditMode"
+        <button *ngIf="isInEditMode" 
+        (click)="onUpdate()"
         mat-raised-button color="primary" class="btn-block">Update Student</button>
         </mat-card>
     </div>
    
      <div class="col-md-8">
-        <mat-card>
+        <mat-card class="table-responsive">
         <table class="table table-bordered" *ngIf="stdsArr.length > 0; else noStudent">
             <thead>
                 <tr>
@@ -37,6 +48,7 @@
                     <th>Full name</th>
                     <th>Email</th>
                     <th>Contact</th>
+                    <th>Is Active</th>
                     <th>Edit</th>
                     <th>Remove</th>
                 </tr>
@@ -47,10 +59,18 @@
                     <td>{{std.fname}} {{std.lname}}</td>
                     <td>{{std.email}}</td>
                     <td>{{std.contact}}</td>
+                    <td><strong class="badge text-white p-2"
+                        [ngClass]="{
+                            'bg-success': std.isActive,
+                            'bg-danger': !std.isActive
+                        }">
+                        {{std.isActive? 'yes': 'No'}}
+                    </strong></td>
                     <td>
                         <!-- <button mat-raised-button color="primary">Edit</button> -->
 
-                         <button  mat-mini-fab color="primary" >
+                         <button (click)="onEdit(std)"
+                          mat-mini-fab color="primary" >
                              <mat-icon>edit</mat-icon>
                           </button>
                     </td>
@@ -67,7 +87,7 @@
             </tbody>
         </table>
         <ng-template #noStudent>
-           <strong> No student data added yet!!!</strong>
+           <strong> No students data added yet!!!</strong>
         </ng-template>
         </mat-card>
     </div>

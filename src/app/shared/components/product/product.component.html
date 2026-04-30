@@ -1,8 +1,32 @@
 
-<p>
-    This is product {{PRODUCT_NAME}} and its Id is {{PRODUCT_ID}}.  
-</p>
+<!-- <p [ngStyle]="{
+  backgroundColor : isAvailable ? 'orange' : '#777',
+  color : isAvailable ? '#fff': '#f00'
+}">
+  
+    This is product {{PRODUCT_NAME}} and its Id is {{PRODUCT_ID}}
+    <strong *ngIf="isAvailable"; else onProduct>
+      and the product is available
+    </strong>
+    <ng-template #onProduct>
+     <strong>and the product is not available</strong>
+    </ng-template>  
+</p> -->
 
+<p class="p-3"
+ [ngClass]="{
+  'bg-success text-white' : isAvailable,
+  'bg-danger' : ! isAvailable
+ }">
+  
+    This is product {{PRODUCT_NAME}} and its Id is {{PRODUCT_ID}}
+    <strong *ngIf="isAvailable"; else onProduct>
+      and the product is available
+    </strong>
+    <ng-template #onProduct>
+     <strong>and the product is not available</strong>
+    </ng-template>  
+</p>
 <br>
 
 <!-- <h3>Search Product</h3> -->
@@ -32,16 +56,16 @@ class="btn btn-primary">
      type="text" class="Form-control">
 </div> -->
 
-<div [innerHTML]="testHTML">
-  <!-- {{testHTML}} -->
-</div>
+<!-- <div [innerHTML]="testHTML">
+   {{testHTML}} 
+</div> -->
 
-<img [src]="imgSrc" alt="Angular">
+<!-- <img [src]="imgSrc" alt="Angular">
 
 <div class="form-group mt-4">
     <input [value]="userName"
      type="text" class="Form-control">
-</div>
+</div> -->
 
 
 <!-- ==== Two way data binding ===== -->
@@ -62,7 +86,7 @@ class="alert alert-info">
 
 <!-- === Custome Create Two way data biding ====-->
 
-<h3>Search Product(Custome create)</h3>
+<!-- <h3>Search Product(Custome create)</h3>
 <div class="form-group">
     <input
     (input)="onSearch($event)"
@@ -72,6 +96,6 @@ class="alert alert-info">
 <p  *ngIf="searchProduct"
 class="alert alert-info">
 {{searchProduct}}
-</p>
+</p> -->
 
 
