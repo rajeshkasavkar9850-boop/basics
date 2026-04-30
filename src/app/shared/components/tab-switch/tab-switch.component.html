@@ -1,0 +1,59 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active : selectedFrameWork.toLowerCase().includes('angular')
+        }"
+        class="nav-link" (click)="onTabChange('angular')">Angular</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active : selectedFrameWork.toLowerCase().includes('node')
+        }"
+        class="nav-link" (click)="onTabChange('node')">Node</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            active : selectedFrameWork.toLowerCase().includes('express')
+        }"
+        class="nav-link" (click)="onTabChange('express')">Express</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;" 
+        [ngClass]="{
+            active : selectedFrameWork.toLowerCase().includes('mongodb')
+        }"
+        class="nav-link" (click)="onTabChange('mongoDb')">MongoDb</a>
+    </li>
+</ul>
+
+
+<hr>
+
+<ng-container [ngSwitch]="selectedFrameWork">
+    <p 
+     *ngSwitchCase="'angular'"
+    class="alert alert-info"> <strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Distinctio asperiores rem, nisi officia temporibus veniam error dolorem! A odio maiores natus, 
+        est optio quibusdam dignissimos mollitia, beatae doloremque nihil assumenda!</p>
+    <p 
+     *ngSwitchCase="'node'"
+    class="alert alert-info"><strong>Node</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Distinctio asperiores rem, nisi officia temporibus veniam error dolorem! A odio maiores natus,
+         est optio quibusdam dignissimos mollitia, beatae doloremque nihil assumenda!</p>
+    <p 
+    *ngSwitchCase="'express'"
+    class="alert alert-info"><strong>Express</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Distinctio asperiores rem, nisi officia temporibus veniam error dolorem! A odio maiores natus, 
+        est optio quibusdam dignissimos mollitia, beatae doloremque nihil assumenda!</p>
+    <p 
+     *ngSwitchCase="'mongoDb'"
+    class="alert alert-info"><strong>MongoDb</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Distinctio asperiores rem, nisi officia temporibus veniam error dolorem! A odio maiores natus,
+         est optio quibusdam dignissimos mollitia, beatae doloremque nihil assumenda!</p>
+</ng-container>
